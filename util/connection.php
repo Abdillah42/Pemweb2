@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$host = "host = john.db.elephantsql.com";
+$host = "host = rosie.db.elephantsql.com";
 $port = "port = 5432";
 $dbname = "dbname = qwnnuslh";
 $username = "user = qwnnuslh";
