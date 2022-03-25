@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$host = "postgres://qwnnuslh:yvrSLjdqCk1EAfnCmAyZcGWzIV7Hw4Xb@rosie.db.elephantsql.com/qwnnuslh";
+$host = "rosie.db.elephantsql.com ";
 $port = "5432";
 $dbname = "tb_mahasiswa";
 $username = "qwnnuslh";
