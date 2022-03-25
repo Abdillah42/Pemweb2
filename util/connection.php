@@ -3,7 +3,7 @@
 session_start();
 $host = "rosie.db.elephantsql.com ";
 $port = "5432";
-$dbname = "tb_mahasiswa";
+$dbname = "qwnnuslh";
 $username = "qwnnuslh";
 $password = "yvrSLjdqCk1EAfnCmAyZcGWzIV7Hw4Xb";
 
