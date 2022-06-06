@@ -3,7 +3,7 @@
 include('../util/connection.php');
 
 if (isset($_POST['submit'])) {
-    $merk = $_POST['merk']
+    $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
     $statement = pg_query($connection, "INSERT INTO tb_hp (merk, type, tahun) VALUES ('$merk', '$type', '$tahun')");
