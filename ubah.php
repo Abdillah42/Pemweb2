@@ -1,33 +1,59 @@
 <?php
-include('connection.php');
 
-$sql = "select * from tb_hp2 where id='" . $_GET['id'] . "'";
-$result = pg_query($sql);
-$data = pg_fetch_object($result);
-?>
-
-<h3>Form Ubah Data</h3>
-
-<form method="post">
-    Merk : 
-<?php echo '<input type="text" name="merk" value="' . $data->merk . '" readonly></br>' ?>
-    Type : 
-<?php echo '<input type="text" name="type" value="' . $data->type . '"></br>' ?>
-    Tahun Produksi : 
-<?php echo '<input type="text" name="tahun" value="' . $data->tahun . '"></br>' ?>
-    <input type="submit" value="Simpan">
-</form>
-
-<?php
-if(isset($_POST['merk']) and !empty($_POST['merk'])) {
-    $sql = "update tb_hp2 set merk='" . $_POST['merk'] . "', type='" . $_POST['type'] . "', tahun='" .   $_POST['tahun'] . "' " . 
-        "where id='" . $_POST['id'] . "'";
-    $result = pg_affected_rows(pg_query($sql));
-    if($result == 1) {
-        echo '<script type="text/javascript">';
-        echo 'alert("Perubahan telah tersimpan");';
-        echo 'window.location.href = "index.php";';
-        echo '</script>';
-    }
+include('util/connection.php');
+$statement = pg_query($connection, "SELECT * FROM tb_hp2 WHERE id=".$_GET['id']);
+while ($row = pg_fetch_array($statement)) {
+    $id = $row['merk'];
+    $merk = $row['merk'];
+    $type = $row['type'];
+    $tahun = $row['tahun'];
 }
+
 ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php include('util/head.php') ?>
+    </head>
+
+    <body>
+        <?php include('util/navbar.php') ?>
+        
+        <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
+            <div class="pt-5">
+                <h3 class="text-center"><b>Ubah Data</b></h3>
+                <?php if(!empty($_SESSION['message'])){
+                    echo $_SESSION['message'];
+                    $_SESSION['message'] = null;
+                } ?>
+            </div>
+            <div class="card mt-5">
+                <form action="process/ubah_proses.php" method="POST">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="merk">Merk</label>
+                            <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id; ?>">
+                            <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type</label>
+                            <input type="text" class="form-control" id="type" name="type" value="<?php echo $type; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tahun">Tahun Produksi</label>
+                            <input type="text" class="form-control" id="tahun" name="tahun" value="<?php echo $tahun; ?>" required>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-danger mr-3" type="button" onclick="history.back()">Batal</button>
+                        <input type="submit" name="submit" class="btn btn-success" value="Simpan" onclick="return confirm('Apakah Anda Yakin?')">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <?php include('util/js.php') ?>
+
+    </body>
+</html>
