@@ -2,7 +2,7 @@
 
 include('../util/connection.php');
 
-$sql = "DELETE FROM tb_mahasiswa WHERE id='".$_GET['id'] ."'";
+$sql = "DELETE FROM tb_hp WHERE id='".$_GET['id'] ."'";
 $result = pg_affected_rows(pg_query($sql));
 if ($result == 1) {
     echo '<script type="text/javascript">';
