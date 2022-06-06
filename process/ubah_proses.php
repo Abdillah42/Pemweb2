@@ -3,6 +3,7 @@
 include('../util/connection.php');
 
 if (isset($_POST['merk']) and !empty($_POST['merk'])) {
+    $id = $_POST['id'];
     $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
