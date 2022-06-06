@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "select * from tb_hp2 where merk='" . $_GET['merk'] . "'";
+$sql = "select * from tb_hp2 where id='" . $_GET['id'] . "'";
 $result = pg_query($sql);
 $data = pg_fetch_object($result);
 ?>
@@ -21,7 +21,7 @@ $data = pg_fetch_object($result);
 <?php
 if(isset($_POST['merk']) and !empty($_POST['merk'])) {
     $sql = "update tb_hp2 set merk='" . $_POST['merk'] . "', type='" . $_POST['type'] . "', tahun='" .   $_POST['tahun'] . "' " . 
-        "where merk='" . $_POST['merk'] . "'";
+        "where id='" . $_POST['id'] . "'";
     $result = pg_affected_rows(pg_query($sql));
     if($result == 1) {
         echo '<script type="text/javascript">';
