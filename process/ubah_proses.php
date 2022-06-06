@@ -2,7 +2,7 @@
 
 include('../util/connection.php');
 
-if (isset($_POST['merk']) and !empty($_POST['merk'])) {
+if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $merk = $_POST['merk'];
     $type = $_POST['type'];
