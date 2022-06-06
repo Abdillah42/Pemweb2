@@ -33,6 +33,7 @@ while ($row = pg_fetch_array($statement)) {
                     <div class="card-body">
                         <div class="form-group">
                             <label for="merk">Merk</label>
+                            <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id; ?>">
                             <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk; ?>" required>
                         </div>
                         <div class="form-group">
