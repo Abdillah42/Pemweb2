@@ -3,6 +3,7 @@
 include('util/connection.php');
 $statement = pg_query($connection, "SELECT * FROM tb_hp WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
+    $merk = $row['Merk'];
     $type = $row['Type'];
     $tahun = $row['Tahun Produksi'];
 }
@@ -27,15 +28,15 @@ while ($row = pg_fetch_array($statement)) {
                     <div class="card-body">
                          <div class="form-group">
                             <label for="merk">Merk</label>
-                            <input type="text" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" disabled>
+                            <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk; ?>" disabled>
                         </div>
                         <div class="form-group">
                             <label for="type">Type</label>
-                            <input type="text" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" disabled>
+                            <input type="text" class="form-control" id="type" name="type" value="<?php echo $type; ?>" disabled>
                         </div>
                         <div class="form-group">
                             <label for="tahun">Tahun Produksi</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama; ?>" disabled>
+                            <input type="text" class="form-control" id="tahun" name="tahun" value="<?php echo $tahun; ?>" disabled>
                         </div>
                     </div>
                 </form>
