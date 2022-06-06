@@ -1,9 +1,6 @@
 <?php
 
 include('../util/connection.php');
-$sql = "select * from tb_hp2 where id='" . $_GET['id'] . "'";
-$result = pg_query($sql);
-$data = pg_fetch_object($result);
 
 if(isset($_POST['id']) and !empty($_POST['id'])) {
     $id = $_POST['id'];
