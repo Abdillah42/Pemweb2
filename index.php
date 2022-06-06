@@ -1,7 +1,7 @@
 <?php 
 
 include('util/connection.php'); 
-$statement = pg_query($connection, "SELECT * FROM tb_hp ORDER BY id DESC");
+$statement = pg_query($connection, "SELECT * FROM tb_hp2 ORDER BY id DESC");
 
 ?>
 
