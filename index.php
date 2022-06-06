@@ -24,7 +24,7 @@ $statement = pg_query($connection, "SELECT * FROM tb_mahasiswa ORDER BY id DESC"
                 </div>
                 <div class="card-mt-5">
                     <div class="card-header">
-                        <a href="tambah.php" class="btn btn-primary">Tambah Mahasiswa</a>
+                        <a href="tambah.php" class="btn btn-primary">Tambah</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
