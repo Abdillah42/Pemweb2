@@ -1,10 +1,10 @@
 <?php
 
 include('util/connection.php');
-$statement = pg_query($connection, "SELECT * FROM tb_mahasiswa WHERE id=".$_GET['id']);
+$statement = pg_query($connection, "SELECT * FROM tb_hp WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
-    $nim = $row['Type'];
-    $nama = $row['Tahun Produksi'];
+    $type = $row['Type'];
+    $tahun = $row['Tahun Produksi'];
 }
 
 ?>
