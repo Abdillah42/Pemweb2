@@ -1,11 +1,11 @@
 <?php
 
 include('util/connection.php');
-$statement = pg_query($connection, "SELECT * FROM tb_mahasiswa WHERE id=".$_GET['id']);
+$statement = pg_query($connection, "SELECT * FROM tb_hp WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
-    $id = $row['id'];
-    $nim = $row['nim'];
-    $nama = $row['nama'];
+    $id = $row['merk'];
+    $nim = $row['type'];
+    $nama = $row['tahun'];
 }
 
 ?>
@@ -21,7 +21,7 @@ while ($row = pg_fetch_array($statement)) {
         
         <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
             <div class="pt-5">
-                <h3 class="text-center"><b>Ubah Data Mahasiswa</b></h3>
+                <h3 class="text-center"><b>Ubah Data</b></h3>
                 <?php if(!empty($_SESSION['message'])){
                     echo $_SESSION['message'];
                     $_SESSION['message'] = null;
@@ -31,13 +31,16 @@ while ($row = pg_fetch_array($statement)) {
                 <form action="process/ubah_proses.php" method="POST">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="nim">NIM</label>
-                            <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id; ?>">
-                            <input type="number" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" required>
+                            <label for="merk">Merk</label>
+                            <input type="text" class="form-control" id="merk" name="merk" value="<?php echo $merk; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama; ?>" required>
+                            <label for="type">Type</label>
+                            <input type="text" class="form-control" id="type" name="type" value="<?php echo $type; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tahun">Tahun Produksi</label>
+                            <input type="text" class="form-control" id="tahun" name="tahun" value="<?php echo $tahun; ?>" required>
                         </div>
                     </div>
                     <div class="card-footer text-right">
