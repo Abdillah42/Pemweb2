@@ -3,9 +3,10 @@
 include('../util/connection.php');
 
 if (isset($_POST['submit'])) {
-    $nim = $_POST['nim'];
-    $nama = $_POST['nama'];
-    $statement = pg_query($connection, "INSERT INTO tb_mahasiswa(nim, nama) VALUES ('$nim', '$nama')");
+    $merk = $_POST['Merk']
+    $type = $_POST['type'];
+    $tahun = $_POST['Tahun Produksi'];
+    $statement = pg_query($connection, "INSERT INTO tb_hp (merk, type, tahun) VALUES ('$merk', '$type', '$tahun')");
     if ($statement) {
         $_SESSION['message'] = '<div class="alert alert-success" role="alert">Berhasil Menambahkan Data</div>';
         header("location:../index.php");
