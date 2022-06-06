@@ -1,7 +1,7 @@
 <?php 
 
 include('util/connection.php'); 
-$statement = pg_query($connection, "SELECT * FROM tb_mahasiswa ORDER BY id DESC");
+$statement = pg_query($connection, "SELECT * FROM tb_hp ORDER BY id DESC");
 
 ?>
 
@@ -16,7 +16,7 @@ $statement = pg_query($connection, "SELECT * FROM tb_mahasiswa ORDER BY id DESC"
 
         <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
                 <div class="pt-5">
-                    <h3 class="text-center"><b>Daftar Mahasiswa</b></h3>
+                    <h3 class="text-center"><b>Daftar HP</b></h3>
                     <?php if(!empty($_SESSION['message'])){
                         echo $_SESSION['message'];
                         $_SESSION['message'] = null;
