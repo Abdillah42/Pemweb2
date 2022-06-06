@@ -25,15 +25,15 @@ include('util/connection.php');
                 <form action="process/tambah_proses.php" method="POST">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="nim">Merk Hp</label>
-                            <input type="number" class="form-control" id="merk" name="merk" placeholder="Masukan Merk..." required>
+                            <label for="merk">Merk Hp</label>
+                            <input type="text" class="form-control" id="merk" name="merk" placeholder="Masukan Merk..." required>
                         </div>
                         <div class="form-group">
-                            <label for="nim">Type</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="Masukan Type..." required>
+                            <label for="type">Type</label>
+                            <input type="text" class="form-control" id="type" name="type" placeholder="Masukan Type..." required>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Tahun Produksi</label>
+                            <label for="tahun">Tahun Produksi</label>
                             <input type="text" class="form-control" id="tahun" name="tahun" placeholder="Masukan Tahun..." required>
                         </div>  
                     <div class="card-footer text-right">
