@@ -40,8 +40,9 @@ $statement = pg_query($connection, "SELECT * FROM tb_hp ORDER BY id DESC");
                                 <?php $no = 1; while($row = pg_fetch_array($statement)): ?>
                                     <tr>
                                         <td class="text-center"><?= $no++; ?></td>
-                                        <td><?= $row['nim']; ?></td>
-                                        <td><?= $row['nama']; ?></td>
+                                        <td><?= $row['merk']; ?></td>
+                                        <td><?= $row['type']; ?></td>
+                                        <td><?= $row['tahun']; ?></td>
                                         <td class="text-center">
                                             <a href="detail.php?id=<?= $row['id']; ?>" class="btn btn-secondary">Detail</a>
                                             <a href="ubah.php?id=<?= $row['id']; ?>" class="btn btn-primary ml-3 mr-3">Ubah</a>
