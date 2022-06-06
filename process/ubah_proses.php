@@ -17,10 +17,6 @@ if(isset($_POST['id']) and !empty($_POST['id'])) {
         echo 'window.location.href = "index.php";';
         echo '</script>';
     }
-    else {
-        $_SESSION['message'] = '<div class="alert alert-danger" role="alert">Gagal Mengubah Data</div>';
-        header("location:../ubah.php?id=$id");   
-    } 
 }
 
 ?>
