@@ -3,9 +3,9 @@
 include('../util/connection.php');
 
 if (isset($_POST['merk']) and !empty($_POST['merk'])) {
-    $merk = $_POST['Merk']
+    $merk = $_POST['merk']
     $type = $_POST['type'];
-    $tahun = $_POST['Tahun Produksi'];
+    $tahun = $_POST['tahun'];
     $sql = "UPDATE tb_hp SET merk='$merk', type='$type', tahun='$tahun' WHERE id='$id'";
     $result = pg_affected_rows(pg_query($sql));
     if($result == 1) {
