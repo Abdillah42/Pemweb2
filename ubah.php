@@ -1,9 +1,10 @@
 <?php
 
 include('util/connection.php');
-$statement = pg_query($connection, "SELECT * FROM tb_hp2 WHERE id=".$_GET['id']);
+
+$query = pg_query($connection, "SELECT * FROM tb_hp2 WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
-    $id = $row['merk'];
+    $id = $row['id'];
     $merk = $row['merk'];
     $type = $row['type'];
     $tahun = $row['tahun'];
@@ -25,6 +26,7 @@ while ($row = pg_fetch_array($statement)) {
                 <h3 class="text-center"><b>Ubah Data</b></h3>
                 <?php if(!empty($_SESSION['message'])){
                     echo $_SESSION['message'];
+                    echo '<meta http-equiv="refresh" content="3;url=ubah.php">';
                     $_SESSION['message'] = null;
                 } ?>
             </div>
