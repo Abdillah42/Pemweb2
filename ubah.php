@@ -26,7 +26,6 @@ while ($row = pg_fetch_array($statement)) {
                 <h3 class="text-center"><b>Ubah Data</b></h3>
                 <?php if(!empty($_SESSION['message'])){
                     echo $_SESSION['message'];
-                    echo '<meta http-equiv="refresh" content="3;url=ubah.php">';
                     $_SESSION['message'] = null;
                 } ?>
             </div>
