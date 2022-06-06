@@ -2,7 +2,7 @@
 
 include('../util/connection.php');
 
-if(isset($_POST['id']) and !empty($_POST['id'])) {
+if(isset($_POST['merk']) and !empty($_POST['merk'])) {
     $sql = "update tb_hp2 set merk='" . $_POST['merk'] . "', type='" . $_POST['type'] . "', tahun='" .   $_POST['tahun'] . "' " .
         "where id='" . $_POST['id'] . "'";
     $result = pg_affected_rows(pg_query($sql));
