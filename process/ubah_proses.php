@@ -3,7 +3,7 @@
 include('../util/connection.php');
 
 if (isset($_POST['merk']) and !empty($_POST['merk'])) {
-    $merk = $_POST['merk']
+    $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
     $sql = "UPDATE tb_hp SET merk='$merk', type='$type', tahun='$tahun' WHERE id='$id'";
