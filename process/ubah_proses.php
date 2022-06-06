@@ -7,7 +7,7 @@ if(isset($_POST['id']) and !empty($_POST['id'])) {
     $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
-    $sql = "update tb_hp2 set merk='" . $_POST['merk'] . "', type='" . $_POST['type'] . "', tahun='" .   $_POST['tahun'] . "'"
+    $sql = "update tb_hp2 set merk='" . $_POST['merk'] . "', type='" . $_POST['type'] . "', tahun='" .   $_POST['tahun'] . "' " .
         "where id='" . $_POST['id'] . "'";
     $result = pg_affected_rows(pg_query($sql));
     
