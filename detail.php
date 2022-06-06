@@ -25,12 +25,16 @@ while ($row = pg_fetch_array($statement)) {
             <div class="card mt-5">
                 <form>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="nim">Type</label>
-                            <input type="number" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" disabled>
+                         <div class="form-group">
+                            <label for="merk">Merk</label>
+                            <input type="text" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" disabled>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Tahun Produksi</label>
+                            <label for="type">Type</label>
+                            <input type="text" class="form-control" id="nim" name="nim" value="<?php echo $nim; ?>" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="tahun">Tahun Produksi</label>
                             <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama; ?>" disabled>
                         </div>
                     </div>
