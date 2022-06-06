@@ -30,6 +30,7 @@ $statement = pg_query($connection, "SELECT * FROM tb_hp ORDER BY id DESC");
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
+                                    <td>no</td>
                                     <td>Merk Hp</td>
                                     <td>Type</td>
                                     <td>Tahun Produksi</td>
@@ -40,6 +41,7 @@ $statement = pg_query($connection, "SELECT * FROM tb_hp ORDER BY id DESC");
                                 <?php $no = 1; while($row = pg_fetch_array($statement)): ?>
                                     <tr>
                                         <td class="text-center"><?= $no++; ?></td>
+                                        <td><?= $row['merk']; ?></td>
                                         <td><?= $row['type']; ?></td>
                                         <td><?= $row['tahun']; ?></td>
                                         <td class="text-center">
