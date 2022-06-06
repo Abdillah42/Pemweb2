@@ -30,9 +30,9 @@ $statement = pg_query($connection, "SELECT * FROM tb_mahasiswa ORDER BY id DESC"
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
-                                    <td>No</td>
-                                    <td>NIM</td>
-                                    <td>Nama</td>
+                                    <td>Merk Hp</td>
+                                    <td>Type</td>
+                                    <td>Tahun Produksi</td>
                                     <td>Aksi</td>
                                 </tr>
                             </thead>
