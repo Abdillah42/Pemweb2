@@ -1,7 +1,7 @@
 <?php
 
 include('util/connection.php');
-$statement = pg_query($connection, "SELECT * FROM tb_hp WHERE id=".$_GET['id']);
+$statement = pg_query($connection, "SELECT * FROM tb_hp2 WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
     $merk = $row['Merk'];
     $type = $row['Type'];
