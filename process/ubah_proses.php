@@ -7,9 +7,9 @@ if (isset($_POST['merk']) and !empty($_POST['merk'])) {
     $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
-    $statement = pg_query($connection, "UPDATE tb_hp2 SET merk='$merk', type='$type', tahun='$tahun' WHERE id='$id'");
-    $result = pg_affected_rows($statement);
-    if ($statement == 1) {
+    $sql = "UPDATE tb_hp2 SET merk='$merk', type='$type', tahun='$tahun' WHERE id='$id'";
+    $result = pg_affected_rows(pg_query($sql));
+    if ($result == 1) {
         $_SESSION['message'] = '<div class="alert alert-success" role="alert">Perubahan data telah tersimpan</div>';
         header("location:../index.php");
     }
