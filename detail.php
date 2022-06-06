@@ -3,9 +3,9 @@
 include('util/connection.php');
 $statement = pg_query($connection, "SELECT * FROM tb_hp2 WHERE id=".$_GET['id']);
 while ($row = pg_fetch_array($statement)) {
-    $merk = $row['Merk'];
-    $type = $row['Type'];
-    $tahun = $row['Tahun Produksi'];
+    $merk = $row['merk'];
+    $type = $row['type'];
+    $tahun = $row['tahun'];
 }
 
 ?>
