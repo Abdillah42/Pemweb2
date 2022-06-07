@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $merk = $_POST['merk'];
     $type = $_POST['type'];
     $tahun = $_POST['tahun'];
-    $sql = "UPDATE tb_hp2 SET merk='$merk', type='$type', tahun='$tahun', WHERE id='$id'";
+    $sql = "UPDATE tb_hp2 SET merk='$merk', type='$type', tahun='$tahun' WHERE id='$id'";
     $result = pg_affected_rows(pg_query($sql));
     
     if($result == 1) {
